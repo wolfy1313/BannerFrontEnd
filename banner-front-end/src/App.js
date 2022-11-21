@@ -6,6 +6,7 @@ import Register from './components/Register'
 import { CheckSession } from './services/Auth'
 import Home from './components/Home'
 import Login from './components/Login'
+import Class from './components/Class'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -49,6 +50,7 @@ function App() {
               />
             }
           />
+          <Route path="class/:id" element={<Class />} />
           <Route path="/register" element={<Register />} />
         </Routes>
       </main>
