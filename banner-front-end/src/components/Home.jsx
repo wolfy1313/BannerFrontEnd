@@ -19,7 +19,7 @@ useEffect(()=>{
 },[])
 
 const showCourse = (course) =>{
-  navigate(`${course.id}`)
+  navigate(`class/${course.id}`)
 }
 
   

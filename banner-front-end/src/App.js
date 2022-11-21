@@ -7,6 +7,8 @@ import { CheckSession } from './services/Auth'
 import Home from './components/Home'
 import Login from './components/Login'
 import Class from './components/Class'
+import Students from './components/Students'
+import StudentDetails from './components/StudentDetails'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -52,7 +54,9 @@ function App() {
           />
           <Route path="/class/:id" element={<Class />} />
           <Route path="/register" element={<Register />} />
-          <Route path='/home' element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/students" element={<Students />} />
+          <Route path="/students/:id" element={<StudentDetails />} />
         </Routes>
       </main>
     </div>
