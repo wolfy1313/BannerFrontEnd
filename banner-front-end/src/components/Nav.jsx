@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Nav = () => {
+const Nav = ({authenticated, user,handleLogOut}) => {
   return (
     <div>Nav</div>
   )

@@ -3,6 +3,9 @@ import { Route, Routes } from 'react-router'
 import './App.css';
 import Nav from './components/Nav';
 import Register from './components/Register';
+import { CheckSession } from './services/Auth';
+import Home from './components/Home'; 
+import Login from './components/Login';
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
