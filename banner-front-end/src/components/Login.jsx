@@ -4,7 +4,8 @@ import { LoginUser } from '../services/Auth'
 
 const Login = ({toggleAuthenticated, setUser}) => {
   const navigate = useNavigate()
-  const [formValues, setFormValues] = useState({ username: '', password: '' })
+  const initialFormValues = { username: '', password: ''};
+  const [formValues, setFormValues] = useState(initialFormValues)
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
@@ -13,10 +14,10 @@ const Login = ({toggleAuthenticated, setUser}) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const payload = await LoginUser(formValues);
-    setFormValues({ username: '', password: ''})
+    setFormValues(initialFormValues)
     setUser(payload)
     toggleAuthenticated(true);
-    navigate('/feed')
+    navigate('/home')
   }
 
   return (
@@ -44,7 +45,7 @@ const Login = ({toggleAuthenticated, setUser}) => {
               required
             />
           </div>
-          <button disabled={!formValues.email || !formValues.password}>
+          <button disabled={!formValues.username || !formValues.password}>
             Login
           </button>
         </form>

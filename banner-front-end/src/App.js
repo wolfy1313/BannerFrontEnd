@@ -52,7 +52,7 @@ function App() {
               />
             }
           />
-          <Route path="class/:id" element={<Class />} />
+          <Route path="/class/:id" element={<Class />} />
           <Route path="/register" element={<Register />} />
           <Route path="/students" element={<Students />} />
           <Route path="/students/:id" element={<StudentDetails />} />
