@@ -17,7 +17,7 @@ const Login = ({toggleAuthenticated, setUser}) => {
     setFormValues(initialFormValues)
     setUser(payload)
     toggleAuthenticated(true);
-    navigate('/home')
+    navigate('/')
   }
 
   return (
