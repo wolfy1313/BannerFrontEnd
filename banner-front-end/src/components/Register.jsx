@@ -5,20 +5,10 @@ import { useNavigate } from 'react-router-dom'
 const Register = () => {
 
   const navigate = useNavigate()
+  const initialFormValues = { username: '', password: '', confirmPassword: ''};
+  const [formValues, setFormValues] = useState(initialFormValues)
 
-  const initialFormValues = {
-    username: '',
-    password: '',
-    confirmPassword: ''
-  };
-
-
-  const [formValues, setFormValues] = useState({initialFormValues})
-
-  const handleChange = (e) => {
-    setFormValues({ ...formValues, [e.target.username]: e.target.value })
-  }
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault()
     await RegisterUser({
@@ -27,7 +17,10 @@ const Register = () => {
     });
     setFormValues(initialFormValues);
     navigate('/login')
-
+    
+  }
+  const handleChange = (e) => {
+    setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
 
   return (
@@ -41,7 +34,7 @@ const Register = () => {
               name="username"
               type="text"
               placeholder="username"
-              value={formValues.username}
+              value={formValues.username} 
               required
             />
           </div>
@@ -65,14 +58,14 @@ const Register = () => {
               required
             />
           </div>
-          <button
+          <button type='submit' className='registerButton'
             disabled={
               !formValues.username ||
               (!formValues.password &&
                 formValues.confirmPassword === formValues.password)
             }
           >
-            Login
+            Register
           </button>
         </form>
       </div>
