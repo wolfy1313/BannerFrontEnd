@@ -6,7 +6,7 @@ import Register from './components/Register'
 import { CheckSession } from './services/Auth'
 import Home from './components/Home'
 import Login from './components/Login'
-import Class from './components/Class'
+import Course from './components/Course'
 import Students from './components/Students'
 import StudentDetails from './components/StudentDetails'
 
@@ -52,7 +52,7 @@ function App() {
               />
             }
           />
-          <Route path="/class/:id" element={<Class />} />
+          <Route path="/class/:id" element={<Course />} />
           <Route path="/register" element={<Register />} />
           <Route path="/home" element={<Home />} />
           <Route path="/students" element={<Students />} />
