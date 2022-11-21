@@ -50,8 +50,9 @@ function App() {
               />
             }
           />
-          <Route path="class/:id" element={<Class />} />
+          <Route path="/class/:id" element={<Class />} />
           <Route path="/register" element={<Register />} />
+          <Route path='/home' element={<Home />} />
         </Routes>
       </main>
     </div>
