@@ -1,7 +1,7 @@
 # BannerFrontEnd
 # Student Courses with Grades App
 ## Date: 11/18/2022
-### By: Jeremy Harrell
+### By: Kathya Castaneda, Thomalita Burbank, Derek Lewis, Jeremy Harrell
 #### [GitHub](https://github.com/wolfy1313) | [LinkedIn](https://www.linkedin.com/in/jeremy-harrell-67a46a229/) | [Spotify](https://open.spotify.com/artist/3orDENaFfgt5gcLk24QHSS)
 ***
 ### ***[TrelloBoard](https://trello.com/b/w3CDUHXc/banner)***
