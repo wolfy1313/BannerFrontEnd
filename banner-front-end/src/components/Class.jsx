@@ -18,7 +18,7 @@ useEffect(()=>{
 
   return (
     <div>
-    <h1>Students in this class</h1>
+    <h1>Students in this CLASS</h1>
     <section>
       {selectedCourse.name}
     </section>
