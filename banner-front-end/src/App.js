@@ -14,6 +14,12 @@ function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
 
+  const handleLogOut = () => {
+    setUser(null)
+    toggleAuthenticated(false)
+    localStorage.clear()
+  }
+
   const checkToken = async () => {
     const user = await CheckSession()
     setUser(user)
@@ -27,11 +33,7 @@ function App() {
     }
   }, [])
 
-  const handleLogOut = () => {
-    setUser(null)
-    toggleAuthenticated(false)
-    localStorage.clear()
-  }
+
 
   return (
     <div className="App">
@@ -56,7 +58,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/home" element={<Home />} />
           <Route path="/students" element={<Students />} />
-          <Route path="/students/:id" element={<StudentDetails />} />
+          <Route path="/studentclass/:id" element={<StudentDetails />} />
         </Routes>
       </main>
     </div>
