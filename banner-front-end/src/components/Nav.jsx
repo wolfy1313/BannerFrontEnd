@@ -24,14 +24,6 @@ const openOptions = (
     <h3>Students</h3>
       </Link>
 
-      <Link to="/login">
-    <h3>Login</h3>
-      </Link>
-
-      <Link to="/register">
-    <h3>Register</h3>
-      </Link>
-
       <Link to="/students/new">
     <h3>New Student</h3>
       </Link>
