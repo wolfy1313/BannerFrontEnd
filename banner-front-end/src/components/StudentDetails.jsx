@@ -21,7 +21,7 @@ const StudentDetails = () => {
   return (
     <div>Student
     {studentCourses?.map((studentCourse) => (
-      
+
       <div>
       {studentCourse.name}
       </div>
