@@ -19,6 +19,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  cursor: pointer;
 }
 
 .App-link {
@@ -104,4 +105,9 @@ body {
   transition: all 0.2s ease-in-out;
   opacity: 1;
 }
+
+.studentCourses, .courses, .course-card{
+  cursor: pointer;
+}
+
 
