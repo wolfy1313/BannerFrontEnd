@@ -8,3 +8,12 @@ export const newStudent = async (data) => {
     throw error
   }
 }
+
+export const newClass = async (data) => {
+  try {
+    const response = await Client.post('/api/class/', data)
+    return response.data
+  } catch (error) {
+    throw error
+  }
+}

@@ -3,9 +3,7 @@ import { useState } from 'react'
 import { newStudent } from '../services/Queries'
 
 const NewStudent = () => {
-  
-  const initialState = { name: ''
-  , email: ''}
+  const initialState = { name: '', email: ''}
   const [formValues, setFormValues] = useState(initialState)
   let navigate = useNavigate()
 
