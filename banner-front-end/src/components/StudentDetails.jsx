@@ -56,8 +56,7 @@ const StudentDetails = () => {
       {studentCourses?.map((studentCourse) => (
       <div className='studentCourses' key={studentCourse.id}>
       <h4>{studentCourse.name} </h4> 
-      <h4> {studentCourse.StudentClass.grade}</h4>
-      <h4>{(() => {
+      <h4>  {(() => {
         if (studentCourse.StudentClass.grade === 4){
           return ('A')
         } else if (studentCourse.StudentClass.grade === 3){
@@ -69,7 +68,8 @@ const StudentDetails = () => {
         } else {
           return ('F')
         }
-      })()}</h4>
+      })()} {studentCourse.StudentClass.grade}</h4>
+      <h4></h4>
       </div>
     )) }
 
