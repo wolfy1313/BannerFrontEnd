@@ -14,6 +14,12 @@ function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
   const [user, setUser] = useState(null)
 
+  const handleLogOut = () => {
+    setUser(null)
+    toggleAuthenticated(false)
+    localStorage.clear()
+  }
+
   const checkToken = async () => {
     const user = await CheckSession()
     setUser(user)
@@ -27,11 +33,7 @@ function App() {
     }
   }, [])
 
-  const handleLogOut = () => {
-    setUser(null)
-    toggleAuthenticated(false)
-    localStorage.clear()
-  }
+
 
   return (
     <div className="App">
