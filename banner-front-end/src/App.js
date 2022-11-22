@@ -9,6 +9,7 @@ import Login from './components/Login'
 import Course from './components/Course'
 import Students from './components/Students'
 import StudentDetails from './components/StudentDetails'
+import NewStudent from './components/NewStudent'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -32,8 +33,6 @@ function App() {
       checkToken()
     }
   }, [])
-
-
 
   return (
     <div className="App">
@@ -59,6 +58,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/students" element={<Students />} />
           <Route path="/studentclass/:id" element={<StudentDetails />} />
+          <Route path="/students/new" element={<NewStudent />} />
         </Routes>
       </main>
     </div>
