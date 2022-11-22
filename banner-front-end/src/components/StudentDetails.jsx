@@ -4,18 +4,17 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 
 const StudentDetails = () => {
-  const {id} = useParams
+  const { id } = useParams()
   const [studentCourses, setStudentCourses] = useState([])
   let navigate = useNavigate()
 
-
-  useEffect(()=>{
-    const getStudentCourses = async ()=>{
-      const response = await axios.get(`http://localhost:3001/api/studentclass/${id}`)
-      console.log(response.data)
-      setStudentCourses(response.data)
+  const getStudentCourses = async ()=>{
+    const response = await axios.get(`http://localhost:3001/api/studentclass/${id}`)
+    console.log(response.data)
+    setStudentCourses(response.data)
     }
-    getStudentCourses()
+    useEffect(()=>{
+      getStudentCourses()
   },[])
 
   // const showStudentCourses = (studentCourses)=> {
@@ -24,7 +23,7 @@ const StudentDetails = () => {
 
   return (
     <div>Student
-    {studentCourses.students.map((studentCourse) => (
+    {studentCourses.students?.map((studentCourse) => (
       
       // <div className="studentClass-card" onClick={() => showStudentCourses(studentCourses)} key={studentCourses.id}>
       <div>
