@@ -1,35 +1,39 @@
 import React from 'react'
 import { useState } from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { newClass } from '../services/Queries';
 
 const AddClass = () => {
   const navigate = useNavigate()
   const initialState = { name: '', grade: ''};
-  const [newClass, setNewClass] = useState(initialState)
+  const [formValues, setFormValues] = useState(initialState)
 
   const handleChange = (e) => {
-    setNewClass({ ...newClass, [e.target.name]: e.target.value})
+    setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
   
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const response = await axios.post('/api/class', newClass)
-    setNewClass(initialState)
+    await newClass({
+      name: formValues.name    })
+    setFormValues(initialState)
     navigate('/')
   }
 
 
-
   return (
-    <div>AddClass
+    <div>Add a New Class
       <div className='add-class-form'>
-          <form onSubmit={handleSubmit} key={newClass.id}>
-            <ul>
-              <li><input type="text" value={newClass.name} onChange={handleChange} id={'name'} placeholder={'name'}/></li>
-              <li><input type="text" value={newClass.grade} onChange={handleChange} id={'grade'} placeholder={'grade'}/></li>
+          <form onSubmit={handleSubmit}>
+              <input 
+              onChange={handleChange} 
+              name="name"
+              value={formValues.name} 
+              type="text" 
+              placeholder='Name'
+              required
+              />
               <button>Submit</button>
-            </ul>
           </form>
         </div>
     </div>
