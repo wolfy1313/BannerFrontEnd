@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import AddClass from './AddClass'
 
 const Home = () => {
   let navigate = useNavigate()
@@ -33,6 +34,8 @@ const showCourse = (course) =>{
             </div>
           ))}
       </section>
+      <br />
+      <AddClass />
       </div>
   )
 }
