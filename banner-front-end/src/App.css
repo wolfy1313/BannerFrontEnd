@@ -117,6 +117,10 @@ body {
   opacity: 1;
 }
 
+.studentCourses{
+  padding-bottom: 2vh;
+}
+
 .studentCourses, .courses, .course-card, .student-card{
   cursor: pointer;
 }
@@ -127,10 +131,6 @@ body {
 .addClass-header{
   font-weight: bold;
   text-decoration: double;
-}
-
-.add-class-form{
-  
 }
 
 
