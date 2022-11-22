@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 const StudentDetails = () => {
   const {id} = useParams()
   const [studentCourses, setStudentCourses] = useState([])
+  const [student, setStudent] = useState("")
   let navigate = useNavigate()
 
 
@@ -13,17 +14,19 @@ const StudentDetails = () => {
     const response = await axios.get(`http://localhost:3001/api/studentclass/${id}`)
     console.log(response)
     setStudentCourses(response.data.students)
+    setStudent(response.data.name)
   }
   useEffect(()=>{
     getStudentCourses()
   },[])
 
   return (
-    <div>Student
+    <div>{student}
     {studentCourses?.map((studentCourse) => (
 
       <div>
-      {studentCourse.name}
+      <h4>{studentCourse.name} </h4> 
+      <h4> {studentCourse.StudentClass.grade}</h4>
       </div>
     )) }
     </div>
