@@ -17,7 +17,7 @@ const AddClass = () => {
     await newClass({
       name: formValues.name    })
     setFormValues(initialState)
-    navigate('/')
+    window.location.reload()
   }
 
 
