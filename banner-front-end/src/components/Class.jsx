@@ -13,9 +13,6 @@ useEffect(()=>{
   const apiCall = async () =>{
     const response = await axios.get(`http://localhost:3001/api/class/${id}`)
     setSelectedCourse(response.data.classes)
-    console.log(response.data.classes.map((student)=>{
-     return student.name
-    }))
   }
   apiCall()
 },[])

@@ -15,7 +15,7 @@ const Nav = ({authenticated, user, handleLogOut}) => {
 }
 
 const openOptions = (
-  <nav className="navBar">
+  <nav className="navMenu">
       <Link to="/">
     <h3>Home</h3>
       </Link>
