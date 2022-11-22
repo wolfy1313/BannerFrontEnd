@@ -7,6 +7,7 @@ const StudentDetails = () => {
   const {id} = useParams()
   const [studentCourses, setStudentCourses] = useState([])
   const [student, setStudent] = useState("")
+  const [studentGrades, setStudentGrades] = useState()
   let navigate = useNavigate()
 
 
@@ -16,15 +17,27 @@ const StudentDetails = () => {
     setStudentCourses(response.data.students)
     setStudent(response.data.name)
   }
+
+  // const getStudentGrades = () => {
+  //   const total = 0
+  //   let grades = studentCourses.map((studentCourse) => {
+  //     studentCourse.StudentClass.grade
+  //   });
+  // }
+    
+  console.log(studentCourses.map((studentCourse) => (
+    studentCourse.StudentClass.grade
+  )))
+  
   useEffect(()=>{
     getStudentCourses()
   },[])
 
   return (
     <div>{student}
-    {studentCourses?.map((studentCourse) => (
-
-      <div>
+      
+      {studentCourses?.map((studentCourse) => (
+      <div className='studentCourses' key={studentCourse.id}>
       <h4>{studentCourse.name} </h4> 
       <h4> {studentCourse.StudentClass.grade}</h4>
       </div>
