@@ -106,8 +106,11 @@ body {
   opacity: 1;
 }
 
-.studentCourses, .courses, .course-card{
+.studentCourses, .courses, .course-card, .student-card{
   cursor: pointer;
+}
+.studentCourses:hover, .courses:hover, .course-card:hover, .student-card:hover{
+  color: #fddb3a;
 }
 
 
