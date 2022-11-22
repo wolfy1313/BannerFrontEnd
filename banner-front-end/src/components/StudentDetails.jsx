@@ -53,8 +53,8 @@ const StudentDetails = () => {
   }
 
   return (
-    <div><h1>{student}</h1>
-      <h2>GPA: {gpa}</h2>
+    <div><h1 className='page-title'>{student}</h1>
+      <h2 className='subheader-title'>GPA: {gpa}</h2>
       
       {studentCourses?.map((studentCourse) => (
       <div className='studentCourses' key={studentCourse.id}>

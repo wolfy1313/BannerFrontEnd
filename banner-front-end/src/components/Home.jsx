@@ -26,7 +26,7 @@ const showCourse = (course) =>{
   
   return (
     <div>
-      <h1>Current Courses</h1>
+      <h1 className='page-title'>Current Courses</h1>
       <section>
           {courses.map((course) => (
             <div className="course-card" onClick={() => showCourse(course)}key={course.id}>

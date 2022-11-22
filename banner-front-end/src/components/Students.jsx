@@ -23,7 +23,7 @@ const showStudent =(student)=>{
   return(
 
     <div>
-      <h1>All Students</h1>
+      <h1 className='page-title'>All Students</h1>
       {students.map((student)=>(
         <div className="student-card" onClick={() => showStudent(student)}key={student.id}>
           <h3>{student.name}</h3>
