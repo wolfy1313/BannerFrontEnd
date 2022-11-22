@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
@@ -9,6 +9,7 @@ const StudentDetails = () => {
   const [student, setStudent] = useState("")
   const [studentGrades, setStudentGrades] = useState([])
   const [gpa, setGpa] = useState('')
+  let navigate = useNavigate()
   
 
 
@@ -47,7 +48,9 @@ const StudentDetails = () => {
     gpaCalculation()
   },[studentGrades])
 
-
+  const showCourse = (studentCourse) =>{
+    navigate(`/class/${studentCourse.id}`)
+  }
 
   return (
     <div><h1>{student}</h1>
@@ -55,7 +58,7 @@ const StudentDetails = () => {
       
       {studentCourses?.map((studentCourse) => (
       <div className='studentCourses' key={studentCourse.id}>
-      <h4>{studentCourse.name} </h4> 
+      <h4 onClick={() => showCourse(studentCourse)}>{studentCourse.name} </h4> 
       <h4>  {(() => {
         if (studentCourse.StudentClass.grade === 4){
           return ('A')
