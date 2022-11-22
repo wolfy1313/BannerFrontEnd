@@ -22,7 +22,7 @@ const AddClass = () => {
 
 
   return (
-    <div>Add a New Class
+    <div className='addClass-header'>Add a New Class
       <div className='add-class-form'>
           <form onSubmit={handleSubmit}>
               <input 

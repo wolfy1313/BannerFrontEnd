@@ -23,11 +23,11 @@ const showStudent =(student)=>{
 
   return (
     <div>
-      <div className='courses'>
-    <h1>Students in this class</h1>
-    <section>
+      <div>
+    <h1 className='page-title'>Students in this class</h1>
+    <section >
       {selectedCourse ? selectedCourse.map((student)=>(
-        <h1 onClick={() => showStudent(student)} key={student.id}>{student.name}</h1>
+        <h1 className='courses' onClick={() => showStudent(student)} key={student.id}>{student.name}</h1>
       )): null}
     </section>
       </div>

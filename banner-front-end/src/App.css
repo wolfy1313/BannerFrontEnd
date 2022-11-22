@@ -34,8 +34,19 @@
 }
 
 body {
+  display: flex;
+  justify-content:center;
   background: #599565;
   font-family: "Montserrat", sans-serif;
+}
+.subheader-title{
+  padding-bottom: 3vh;
+}
+.page-title{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10vh;
+  padding-top: 5vh;
 }
 
 /* .navMenu {
@@ -111,6 +122,15 @@ body {
 }
 .studentCourses:hover, .courses:hover, .course-card:hover, .student-card:hover{
   color: #fddb3a;
+}
+
+.addClass-header{
+  font-weight: bold;
+  text-decoration: double;
+}
+
+.add-class-form{
+  
 }
 
 
