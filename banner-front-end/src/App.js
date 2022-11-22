@@ -9,6 +9,7 @@ import Login from './components/Login'
 import Class from './components/Class'
 import Students from './components/Students'
 import StudentDetails from './components/StudentDetails'
+import AddClass from './components/AddClass'
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -55,6 +56,7 @@ function App() {
             }
           />
           <Route path="/class/:id" element={<Class />} />
+          <Route path="/class" element={<AddClass />} />
           <Route path="/register" element={<Register />} />
           <Route path="/home" element={<Home />} />
           <Route path="/students" element={<Students />} />

@@ -1,12 +1,13 @@
 import React from 'react'
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import { Navigate, useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
 const Class = () => {
   let {id} = useParams()
-
-const [selectedCourse, setSelectedCourse]= useState("")
+  
+  const [selectedCourse, setSelectedCourse]= useState("")
+  
 
 useEffect(()=>{
   const apiCall = async () =>{
@@ -16,12 +17,18 @@ useEffect(()=>{
   apiCall()
 },[])
 
+
+
+
   return (
     <div>
+      <div className='courses'>
     <h1>Students in this CLASS</h1>
     <section>
       {selectedCourse.name}
     </section>
+      </div>
+      
     </div>
   )
 }
