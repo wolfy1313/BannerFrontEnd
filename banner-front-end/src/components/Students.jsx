@@ -17,7 +17,7 @@ useEffect(()=>{
 },[])
 
 const showStudent =(student)=>{
-  navigate(`${student.id}`)
+  navigate(`/students/${student.id}`)
 }
 
   return(

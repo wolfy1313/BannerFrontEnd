@@ -12,7 +12,10 @@ const Class = () => {
 useEffect(()=>{
   const apiCall = async () =>{
     const response = await axios.get(`http://localhost:3001/api/class/${id}`)
-    setSelectedCourse(response.data)
+    setSelectedCourse(response.data.classes)
+    console.log(response.data.classes.map((student)=>{
+     return student.name
+    }))
   }
   apiCall()
 },[])
@@ -23,9 +26,11 @@ useEffect(()=>{
   return (
     <div>
       <div className='courses'>
-    <h1>Students in this CLASS</h1>
+    <h1>Students in this class</h1>
     <section>
-      {selectedCourse.name}
+      {selectedCourse ? selectedCourse.map((student)=>(
+        <h1>{student.name}</h1>
+      )): null}
     </section>
       </div>
       
